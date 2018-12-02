@@ -1,0 +1,10 @@
+{  
+   "video":[  
+      ".mkv",
+      ".mp4",
+      ".avi"
+   ],
+   "subtitle":[  
+      ".srt"
+   ]
+}

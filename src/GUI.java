@@ -34,7 +34,6 @@ public class GUI {
 	JTextField txtSeriesName;
 	JTextField txtSubtitleLanguage;
 	JTree fileTree;
-	JProgressBar progressBar;
 	JButton btnScanFolder;
 	JButton btnRename;
 	JSpinner cntSeasonNumber;
@@ -161,13 +160,6 @@ public class GUI {
 		lblSubtitleLanguage.setBounds(0, 145, 118, 14);
 		panel.add(lblSubtitleLanguage);
 		
-		progressBar = new JProgressBar();
-		progressBar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		progressBar.setForeground(Color.BLUE);
-		progressBar.setStringPainted(true);
-		progressBar.setBounds(10, 528, 418, 23);
-		panel.add(progressBar);
-		
 		btnScanFolder = new JButton("Scan Folder");
 		btnScanFolder.setAction(action);
 		btnScanFolder.setBounds(301, 62, 127, 28);
@@ -179,7 +171,7 @@ public class GUI {
 		panel.add(btnRename);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(24, 184, 404, 322);
+		scrollPane.setBounds(10, 184, 422, 367);
 		panel.add(scrollPane);
 		
 		fileTree = new JTree();
