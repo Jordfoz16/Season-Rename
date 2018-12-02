@@ -37,41 +37,41 @@ public class Source {
 		}
 	}
 	
-	public void correctTitle(String title, int season, String language) {
-		int counter = 1;
+	public void correctTitle(String title, int season, String language, int episode) {
 		String counterEpisode;
 		
 		for(int i = 0; i < videoFiles.size(); i++) {
-			counterEpisode = String.format(utils.formatEpisode(videoFiles.size()), (i + 1));
+			counterEpisode = String.format(utils.formatEpisode(videoFiles.size()), (i + episode));
 			videoFiles.get(i).setTitle(title, season, counterEpisode);
-			counter++;
 		}
 		
-		counter = 1;
-		
 		for(int i = 0; i < subtitleFiles.size(); i++) {
-			counterEpisode = String.format(utils.formatEpisode(subtitleFiles.size()), (i + 1));
+			counterEpisode = String.format(utils.formatEpisode(subtitleFiles.size()), (i + episode));
 			if(language == null) {
 				subtitleFiles.get(i).setTitle(title, season, counterEpisode);
 			}else {
 				subtitleFiles.get(i).setTitle(title, season, counterEpisode, language);
 			}
-			counter++;
 		}
 	}
 	
-	public void correctTitle(String title, int season) {
-		correctTitle(title, season, null);
+	public void correctTitle(String title, int season, int episode) {
+		correctTitle(title, season, null, episode);
+	}
+	
+	public void rename(int starting) {
+		for(int i = starting; i < videoFiles.size(); i++) {
+			utils.renameFile(videoFiles.get(i));
+		}
+		for(int i = starting; i < subtitleFiles.size(); i++) {
+			utils.renameFile(subtitleFiles.get(i));
+		}
 	}
 	
 	public void rename() {
-		for(int i = 0; i < videoFiles.size(); i++) {
-			utils.renameFile(videoFiles.get(i), videoFiles.get(i).getTitle());
-		}
-		for(int i = 0; i < subtitleFiles.size(); i++) {
-			utils.renameFile(subtitleFiles.get(i), subtitleFiles.get(i).getTitle());
-		}
+		rename(0);
 	}
+	
 	
 	public void clear() {
 		videoFiles.clear();

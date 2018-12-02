@@ -30,9 +30,9 @@ public class Utils {
 		}
 	}
 	
-	public void renameFile(MediaFile mediafile, String name) {
+	public void renameFile(MediaFile mediafile) {
 		File file = new File(mediafile.getPath());
-		File newFile = new File(mediafile.getParentPath() + "/" + name + mediafile.getExtenstion());
+		File newFile = new File(mediafile.getParentPath() + "/" + mediafile.getTitle() + mediafile.getExtenstion());
 		
 		if(file.renameTo(newFile)) {
 		}else {
