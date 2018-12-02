@@ -59,17 +59,13 @@ public class Source {
 		correctTitle(title, season, null, episode);
 	}
 	
-	public void rename(int starting) {
-		for(int i = starting; i < videoFiles.size(); i++) {
+	public void rename() {
+		for(int i = videoFiles.size() - 1; i >= 0; i--) {
 			utils.renameFile(videoFiles.get(i));
 		}
-		for(int i = starting; i < subtitleFiles.size(); i++) {
+		for(int i = subtitleFiles.size() - 1; i >= 0; i--) {
 			utils.renameFile(subtitleFiles.get(i));
 		}
-	}
-	
-	public void rename() {
-		rename(0);
 	}
 	
 	

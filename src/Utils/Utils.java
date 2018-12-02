@@ -36,7 +36,7 @@ public class Utils {
 		
 		if(file.renameTo(newFile)) {
 		}else {
-			System.out.println("Failed!!");
+			System.out.println("File already exists");
 		}
 	}
 	
