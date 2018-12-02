@@ -9,7 +9,7 @@ Season renamer will rename a season of a TV show with the correct title needed f
 #### Using the application
 
 Make sure you have the java runtime enviroment installed.
-Run the "Season Rename.jar", this will create a whitelist.txt file
+Run the "Season Rename.jar", this will create a whitelist.json file
 Enter the path to the folder where your season is located
 Enter the series name
 Enter the season number and episode starting number
@@ -17,6 +17,6 @@ Enter subtitle language if needed
 Scan the folder to check it can open the folder
 Click the rename button to rename the folder
 
-#### Editing the whitelist.txt
+#### Editing the whitelist.json
 
-Inside the whitelist.txt are the file extension that can be renamed. So if a video or subtitle format is not there then it can be added by using the json format. If you have made a change to the whitelist.txt the program will need restarting. To get the defualt whitelist.txt delete the current file and relaunch the application.
+Inside the whitelist.json are the file extension that can be renamed. So if a video or subtitle format is not there then it can be added by using the json format. If you have made a change to the whitelist.txt the program will need restarting. To get the defualt whitelist.txt delete the current file and relaunch the application.

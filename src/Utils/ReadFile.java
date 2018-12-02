@@ -19,7 +19,7 @@ public class ReadFile {
 	private ArrayList<String> videoList = new ArrayList<String>();
 	private ArrayList<String> subtitleList = new ArrayList<String>();
 	
-	private File blacklist = new File("whitelist.txt");
+	private File whitelist = new File("whitelist.json");
 	
 	private String template = 
 			"{  \r\n" + 
@@ -41,10 +41,10 @@ public class ReadFile {
 	
 	public void checkForFile() {
 		
-		if(!blacklist.exists()) {
+		if(!whitelist.exists()) {
 			System.out.println("Creating Whitelist File");
 			try {
-				PrintWriter writer = new PrintWriter("whitelist.txt", "UTF-8");
+				PrintWriter writer = new PrintWriter("whitelist.json", "UTF-8");
 				writer.write(template);
 				writer.close();
 			} catch (FileNotFoundException e) {
@@ -61,7 +61,7 @@ public class ReadFile {
 		JSONParser parser = new JSONParser();
 		
 		try {
-			Object obj = parser.parse(new FileReader("whitelist.txt"));
+			Object obj = parser.parse(new FileReader("whitelist.json"));
 			JSONObject jsonObject = (JSONObject) obj;
 			
 			JSONArray videoFormat = (JSONArray) jsonObject.get("video");
