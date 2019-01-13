@@ -15,7 +15,7 @@ public class SubtitleFile extends MediaFile{
 	}
 	
 	public void setTitle(String title, int season, String episode, String language) {
-		this.title = title + " S" + season + "E" + episode + " " + language;
+		this.title = title + " S" + season + "E" + episode + "." + language;
 	}
 	
 	public void setLanguage(String language) {

@@ -87,6 +87,7 @@ public class GUI {
 	}
 	
 	public void renameFile() {
+		scanFile();
 		
 		if(txtSubtitleLanguage.getText() != "") {
 			source.correctTitle(txtSeriesName.getText(), (int) cntSeasonNumber.getValue(), txtSubtitleLanguage.getText(), (int) cntEpisodeNumber.getValue());
@@ -149,8 +150,8 @@ public class GUI {
 		panel.add(cntSeasonNumber);
 		
 		txtSubtitleLanguage = new JTextField();
-		txtSubtitleLanguage.setToolTipText("Subtitle language");
-		txtSubtitleLanguage.setText("English");
+		txtSubtitleLanguage.setToolTipText("Subtitle language. Use ISO-639-2/B (e.g. eng, fra)");
+		txtSubtitleLanguage.setText("eng");
 		txtSubtitleLanguage.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtSubtitleLanguage.setColumns(10);
 		txtSubtitleLanguage.setBounds(128, 140, 138, 28);
